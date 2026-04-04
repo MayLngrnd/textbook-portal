@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портал учебников</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Навигация портала -->
+    <nav class="portal-nav">
+        <div class="nav-container">
+            <div class="nav-logo">Портал учебников</div>
+            <div class="nav-links">
+                <a href="index.html" class="active">Главная</a>
+                <a href="#">Библиотека</a>
+                <a href="#">Профиль</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="portal-main">
+        <!-- Заголовок -->
+        <div class="portal-header">
+            <h1>Мои учебники</h1>
+            <p>Продолжите обучение или выберите новый курс</p>
+        </div>
+
+        <!-- Сетка учебников -->
+        <div class="textbooks-grid">
+            <!-- Карточка учебника (активный) -->
+            <div class="textbook-card">
+                <div class="card-cover">
+                    <div class="cover-content">
+                        <div class="cover-minister">МИНСЕЛЬХОЗ РФ</div>
+                        <div class="cover-title">The Anatomy<br>of Catering</div>
+                        <div class="cover-subtitle">Business English for Food Technologists</div>
+                        <div class="cover-author">Г.Р. Гарипова</div>
+                        <div class="cover-year">2023</div>
+                    </div>
+                    <div class="cover-badge">Активный</div>
+                </div>
+                <div class="card-info">
+                    <h3>The Anatomy of Catering</h3>
+                    <p>Г.Р. Гарипова • 2023 • 92 стр.</p>
+                    <div class="progress-mini">
+                        <div class="progress-bar-mini">
+                            <div class="progress-fill-mini" style="width: 35%"></div>
+                        </div>
+                        <span>35%</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="reader.html?book=catering&page=5" class="btn-primary">Открыть</a>
+                        <button class="btn-icon" title="Продолжить с последней страницы">▶</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка (пустая, для будущих учебников) -->
+            <div class="textbook-card placeholder">
+                <div class="card-cover placeholder">
+                    <div class="plus-icon">+</div>
+                </div>
+                <div class="card-info">
+                    <h3>Добавить учебник</h3>
+                    <p>Загрузите новый учебник в формате PDF или создайте свой</p>
+                    <button class="btn-primary">Загрузить</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Недавние страницы -->
+        <div class="recent-section">
+            <h2>Недавние</h2>
+            <div class="recent-list" id="recentList">
+                <!-- Будут заполняться из JavaScript -->
+            </div>
+        </div>
+
+        <!-- Все учебники (для будущего) -->
+        <div class="all-textbooks">
+            <h2>Все учебники</h2>
+            <div class="textbooks-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Название</th>
+                            <th>Автор</th>
+                            <th>Прогресс</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>The Anatomy of Catering</td>
+                            <td>Г.Р. Гарипова</td>
+                            <td>
+                                <div class="progress-table">
+                                    <div class="progress-bar-table">
+                                        <div class="progress-fill-table" style="width: 35%"></div>
+                                    </div>
+                                    <span>35%</span>
+                                </div>
+                            </td>
+                            <td>
+                                <a href="reader.html?book=catering&page=5" class="btn-small">Открыть</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/portal.js"></script>
+</body>
+</html>

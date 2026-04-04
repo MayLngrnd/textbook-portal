@@ -1,0 +1,1500 @@
+/* ===== ОБЩИЕ СТИЛИ ===== */
+:root {
+    --primary: #4361ee;
+    --primary-dark: #3a56d4;
+    --secondary: #7209b7;
+    --accent: #f72585;
+    --background: #f8f9fa;
+    --surface: #ffffff;
+    --text: #212529;
+    --text-light: #6c757d;
+    --border: #dee2e6;
+    --success: #06d6a0;
+    --warning: #ffd166;
+    --danger: #ef476f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+/* ===== ПОРТАЛ (index.html) ===== */
+.portal-nav {
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+.portal-main {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.portal-header {
+    margin-bottom: 3rem;
+}
+
+.portal-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.portal-header p {
+    color: var(--text-light);
+    font-size: 1.2rem;
+}
+
+/* Карточки учебников */
+.textbooks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.textbook-card {
+    background: var(--surface);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+    display: flex;
+    border: 1px solid var(--border);
+}
+
+.textbook-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.card-cover {
+    width: 140px;
+    background: linear-gradient(145deg, var(--primary), var(--secondary));
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    color: white;
+}
+
+.card-cover.placeholder {
+    background: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plus-icon {
+    font-size: 3rem;
+    color: #adb5bd;
+}
+
+.cover-minister {
+    font-size: 0.7rem;
+    opacity: 0.9;
+}
+
+.cover-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 1.3;
+    margin: 0.5rem 0;
+}
+
+.cover-subtitle {
+    font-size: 0.7rem;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+}
+
+.cover-author {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.cover-year {
+    font-size: 0.7rem;
+    opacity: 0.8;
+    margin-top: 0.5rem;
+}
+
+.cover-badge {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: var(--accent);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.card-info {
+    flex: 1;
+    padding: 1.5rem;
+}
+
+.card-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.card-info p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.progress-mini {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.progress-bar-mini {
+    flex: 1;
+    height: 6px;
+    background-color: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill-mini {
+    height: 100%;
+    background-color: var(--success);
+    border-radius: 3px;
+}
+
+.card-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: white;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.btn-icon:hover {
+    background-color: var(--background);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* Недавние */
+.recent-section {
+    margin-bottom: 3rem;
+}
+
+.recent-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.recent-list {
+    display: flex;
+    gap: 1rem;
+}
+
+.recent-item {
+    background: var(--surface);
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    text-decoration: none;
+    color: var(--text);
+    min-width: 200px;
+    transition: all 0.2s;
+}
+
+.recent-item:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.recent-title {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.recent-page {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Таблица учебников */
+.all-textbooks {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+}
+
+.all-textbooks h2 {
+    margin-bottom: 1.5rem;
+}
+
+.textbooks-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.textbooks-table th {
+    text-align: left;
+    padding: 1rem;
+    border-bottom: 2px solid var(--border);
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.textbooks-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.progress-table {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 200px;
+}
+
+.progress-bar-table {
+    flex: 1;
+    height: 6px;
+    background-color: var(--border);
+    border-radius: 3px;
+}
+
+.progress-fill-table {
+    height: 100%;
+    background-color: var(--success);
+    border-radius: 3px;
+}
+
+.btn-small {
+    padding: 0.4rem 0.8rem;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* ===== КНОПКА ПОКАЗАТЬ СОДЕРЖАНИЕ ===== */
+.mobile-menu-btn {
+    display: block;
+    width: fit-content;
+    min-width: 200px;
+    padding: 0.4rem 1.8rem;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 0.95rem; 
+    font-weight: 500;
+    margin: 0.5rem 0;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(67, 97, 238, 0.25);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 0.3px;
+    border: 2px solid transparent;
+    line-height: 1.2;
+}
+
+.mobile-menu-btn:hover {
+    background: linear-gradient(135deg, var(--primary-dark), #2a41c0);
+    box-shadow: 0 10px 22px rgba(67, 97, 238, 0.45);
+}
+
+.mobile-menu-btn:active {
+    box-shadow: 0 6px 14px rgba(67, 97, 238, 0.35);
+}
+
+/* ===== ЧИТАЛКА (reader.html) ===== */
+.reader-header {
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.back-to-portal {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background-color: #f0f3ff;
+}
+
+.book-info h1 {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.book-author {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-outline {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border);
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.btn-outline:hover {
+    background-color: var(--background);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.user-menu {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.reader-container {
+    display: flex;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+/* Сайдбар */
+.sidebar {
+    width: 300px;
+    background: var(--surface);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: transform 0.3s;
+    position: sticky;
+    top: 80px;
+    height: calc(100vh - 100px);
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+    position: fixed;
+}
+
+.sidebar-header {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-sidebar {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--text-light);
+}
+
+.sidebar-content {
+    padding: 1rem;
+    overflow-y: auto;
+    height: calc(100% - 60px);
+}
+
+.toc-item {
+    padding: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 0.2rem;
+}
+
+.toc-item:hover {
+    background-color: var(--background);
+}
+
+.toc-item.active {
+    background-color: #f0f3ff;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.toc-item.level-1 {
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.toc-item.level-2 {
+    padding-left: 1.5rem;
+}
+
+/* Основная область */
+.reader-main {
+    flex: 1;
+    min-width: 0;
+}
+
+/* ===== СТИЛИ ДЛЯ СТРАНИЦЫ (page-view-single) ===== */
+.page-view-single {
+    background: var(--surface);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    padding: 3rem 4rem;
+    min-height: 700px;
+    margin-bottom: 1.5rem;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.8;
+    font-size: 16px;
+    color: #2c3e50;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    position: relative;
+    background: white;
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Эффект книги - тень и легкий градиент */
+.page-view-single::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0,0,0,0.02) 0%, transparent 50%);
+    pointer-events: none;
+    border-radius: 16px;
+}
+
+.page-view-single h1 {
+    font-size: 32px;
+    color: #1e3c4f;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.page-view-single h2 {
+    font-size: 26px;
+    color: #2c5282;
+    margin: 30px 0 20px;
+    font-weight: 500;
+}
+
+.page-view-single h3 {
+    font-size: 22px;
+    color: #4a5568;
+    margin: 25px 0 15px;
+    font-style: italic;
+}
+
+.page-view-single h4 {
+    font-size: 18px;
+    color: #718096;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 20px 0 10px;
+}
+
+.page-view-single p {
+    margin-bottom: 20px;
+    text-align: justify;
+    font-size: 16px;
+}
+
+/* Таблицы */
+.page-view-single table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    font-size: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.page-view-single th {
+    background-color: #edf2f7;
+    padding: 12px;
+    border: 1px solid #cbd5e0;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.page-view-single td {
+    padding: 12px;
+    border: 1px solid #cbd5e0;
+    vertical-align: top;
+}
+
+/* Задания */
+.page-view-single .task {
+    background-color: #f8fafc;
+    border-left: 4px solid #4299e1;
+    padding: 25px;
+    margin: 30px 0;
+    border-radius: 0 12px 12px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+/* Поля ввода */
+.page-view-single input[type="text"] {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.page-view-single input[type="text"]:focus {
+    outline: none;
+    border-color: #4299e1;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+}
+
+.page-view-single input[type="text"].correct {
+    background-color: #f0fff4;
+    border-color: #48bb78;
+}
+
+.page-view-single input[type="text"].incorrect {
+    background-color: #fff5f5;
+    border-color: #f56565;
+}
+
+/* Выпадающие списки */
+.page-view-single select {
+    padding: 10px 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    background-color: white;
+    min-width: 200px;
+}
+
+/* Списки */
+.page-view-single ul, .page-view-single ol {
+    margin: 20px 0;
+    padding-left: 30px;
+}
+
+.page-view-single li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* Ячейки таблицы */
+.page-view-single .word-cell {
+    font-weight: 500;
+    color: #2c3e50;
+    background-color: #f0f7ff;
+}
+
+.page-view-single .translation-cell {
+    color: #2c3e50;
+    font-style: italic;
+    background-color: #f9f9f9;
+}
+
+/* Видео */
+.page-view-single .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin: 30px 0;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.page-view-single .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Заметки */
+.page-view-single .notes-section {
+    background-color: #fef9e7;
+    border: 1px solid #fef3c7;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 30px 0;
+}
+
+.page-view-single textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Кнопки в заданиях */
+.page-view-single .btn-small {
+    background-color: #4299e1;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 10px 5px 0 0;
+    transition: background-color 0.2s;
+    font-weight: 500;
+}
+
+.page-view-single .btn-small:hover {
+    background-color: #3182ce;
+}
+
+.page-view-single .btn-outline {
+    background-color: white;
+    color: #4361ee;
+    border: 2px solid #4361ee;
+}
+
+.page-view-single .btn-outline:hover {
+    background-color: #4361ee;
+    color: white;
+}
+
+/* Результаты заданий */
+.page-view-single .task-result {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.page-view-single .task-result.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.page-view-single .task-result.partial {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+/* Навигация по страницам */
+.page-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+    padding: 0.8rem 1.5rem;
+    background: var(--surface);
+    border-radius: 50px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    flex-wrap: wrap;
+}
+
+.nav-page-btn {
+    min-width: 100px;
+    height: 45px;
+    padding: 0 1.2rem;
+    border-radius: 40px;
+    border: 1px solid var(--border);
+    background: white;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px;
+}
+
+.nav-page-btn:hover:not(:disabled) {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    transform: scale(1.02);
+}
+
+.nav-page-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.page-jumper {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: #f8f9fa;
+    padding: 0.4rem 1.2rem;
+    border-radius: 40px;
+    border: 1px solid var(--border);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.page-jumper span {
+    white-space: nowrap;
+    font-size: 0.95rem;
+}
+
+.page-jumper input {
+    width: 70px;
+    padding: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+/* На мобильных кнопки на всю ширину */
+@media (max-width: 768px) {
+    .page-navigation {
+        flex-direction: column;
+        gap: 0.8rem;
+        padding: 1rem;
+        border-radius: 20px;
+        width: 100%;
+    }
+    
+    .nav-page-btn {
+        width: 100%;
+        max-width: none;
+        height: 48px;
+        font-size: 1rem;
+    }
+    
+    .page-jumper {
+        width: 100%;
+        padding: 0.8rem;
+    }
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: var(--surface);
+    border-radius: 20px;
+    width: 600px;
+    max-width: 90%;
+    max-height: 80vh;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.modal-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-light);
+}
+
+.modal-body {
+    padding: 1.5rem;
+    overflow-y: auto;
+    max-height: calc(80vh - 80px);
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Затемнение фона при открытом меню */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+.sidebar-overlay.active {
+    display: block;
+}
+
+/* ===== МОБИЛЬНАЯ АДАПТАЦИЯ ===== */
+@media (max-width: 1024px) {
+    .page-view-single {
+        padding: 2.5rem;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Шапка */
+    .reader-header {
+        padding: 0.8rem 1rem;
+        flex-wrap: wrap;
+    }
+    
+    .header-left {
+        width: 100%;
+        justify-content: space-between;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .back-to-portal {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+        white-space: nowrap;
+    }
+    
+    .book-info h1 {
+        font-size: 1rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 180px;
+    }
+    
+    .book-author {
+        display: none;
+    }
+    
+    .header-right {
+        width: 100%;
+        display: flex;
+        gap: 0.5rem;
+    }
+    
+    .btn-outline {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+        flex: 1;
+        text-align: center;
+        border-radius: 30px;
+    }
+    
+    .user-menu {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+    }
+    
+    /* Контейнер */
+    .reader-container {
+        flex-direction: column;
+        padding: 0.5rem;
+    }
+    
+    /* Кнопка меню на мобильных */
+    .mobile-menu-btn {
+        width: 90%;
+        max-width: 280px;
+        padding: 0.9rem 1.5rem;
+        font-size: 1.1rem;
+        margin: 0.8rem auto;
+    }
+    
+    /* Сайдбар на мобильных */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 85%;
+        max-width: 300px;
+        height: 100vh;
+        z-index: 1000;
+        transform: translateX(-100%);
+        border-radius: 0 16px 16px 0;
+        box-shadow: 2px 0 20px rgba(0,0,0,0.15);
+    }
+    
+    .sidebar:not(.hidden) {
+        transform: translateX(0);
+    }
+    
+    .sidebar-header {
+        padding: 1rem;
+        background: var(--primary);
+        color: white;
+    }
+    
+    .sidebar-header h3 {
+        color: white;
+    }
+    
+    .close-sidebar {
+        color: white;
+        background: rgba(255,255,255,0.2);
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Страница на мобильных */
+    .page-view-single {
+        padding: 1.5rem 1rem;
+        min-height: auto;
+        margin: 0 0 1rem 0;
+        font-size: 15px;
+        max-width: 100%;
+    }
+    
+    /* Навигация на мобильных */
+    .page-navigation {
+        flex-direction: column;
+        gap: 0.8rem;
+        padding: 1rem;
+        border-radius: 20px;
+    }
+    
+    .nav-page-btn {
+        width: 100%;
+        height: 45px;
+        border-radius: 30px;
+    }
+    
+    .page-jumper {
+        width: 100%;
+        justify-content: center;
+        padding: 0.5rem;
+    }
+    
+    /* Таблицы на мобильных */
+    .table-responsive {
+        overflow-x: auto;
+        margin: 20px -0.5rem;
+        padding: 0 0.5rem;
+        width: calc(100% + 1rem);
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .task-table {
+        min-width: 600px;
+        font-size: 14px;
+    }
+    
+    .task-table th,
+    .task-table td {
+        padding: 8px 6px;
+    }
+    
+    .task-table input {
+        font-size: 13px;
+        padding: 6px;
+        width: 120px;
+    }
+    
+    /* Задания на мобильных */
+    .task {
+        padding: 1rem;
+        margin: 1.5rem 0;
+    }
+    
+    .task-controls {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .task-controls button {
+        width: 100%;
+        margin: 0;
+    }
+    
+    /* Видео на мобильных */
+    .video-container iframe {
+        height: 200px;
+    }
+    
+    /* Содержание на мобильных */
+    .toc-item {
+        padding: 0.8rem;
+        font-size: 1rem;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .toc-item.level-1 {
+        padding-left: 1.5rem;
+        background-color: #f8f9fa;
+    }
+    
+    .toc-item.level-2 {
+        padding-left: 2.5rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-view-single {
+        padding: 1.2rem 0.8rem;
+    }
+    
+    .mobile-menu-btn {
+        width: 95%;
+        padding: 0.8rem 1.2rem;
+        font-size: 1rem;
+    }
+    
+    .page-jumper span {
+        font-size: 0.9rem;
+    }
+    
+    .page-jumper input {
+        width: 60px;
+        padding: 0.4rem;
+    }
+}
+
+/* ===== МОБИЛЬНАЯ АДАПТАЦИЯ ДЛЯ ГЛАВНОЙ СТРАНИЦЫ (index.html) ===== */
+
+/* Планшеты */
+@media (max-width: 1024px) {
+    .portal-main {
+        padding: 0 1.5rem;
+    }
+    
+    .portal-header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .portal-header p {
+        font-size: 1.1rem;
+    }
+    
+    .textbooks-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+/* Мобильные устройства */
+@media (max-width: 768px) {
+    /* Навигация портала */
+    .portal-nav {
+        padding: 0.8rem 1rem;
+    }
+    
+    .nav-container {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .nav-logo {
+        font-size: 1.3rem;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0.3rem;
+    }
+    
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    
+    .nav-links a {
+        font-size: 0.95rem;
+        padding: 0.3rem 0;
+    }
+    
+    /* Основной контент */
+    .portal-main {
+        padding: 0 1rem;
+        margin: 1.5rem auto;
+    }
+    
+    .portal-header {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    
+    .portal-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .portal-header p {
+        font-size: 1rem;
+    }
+    
+    /* Карточки учебников */
+    .textbooks-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .textbook-card {
+        flex-direction: column;
+    }
+    
+    .card-cover {
+        width: 100%;
+        height: 160px;
+        flex-direction: row;
+        align-items: center;
+        padding: 1rem 1.5rem;
+    }
+    
+    .card-cover .cover-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+    }
+    
+    .cover-minister {
+        font-size: 0.65rem;
+    }
+    
+    .cover-title {
+        font-size: 1.2rem;
+        margin: 0.3rem 0;
+    }
+    
+    .cover-subtitle {
+        font-size: 0.7rem;
+    }
+    
+    .cover-author {
+        font-size: 0.8rem;
+    }
+    
+    .cover-badge {
+        top: 0.8rem;
+        right: 1rem;
+        font-size: 0.65rem;
+        padding: 0.15rem 0.5rem;
+    }
+    
+    .card-info {
+        padding: 1.2rem;
+    }
+    
+    .card-info h3 {
+        font-size: 1.1rem;
+    }
+    
+    .card-info p {
+        font-size: 0.85rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .progress-mini {
+        margin-bottom: 1rem;
+    }
+    
+    .card-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .card-actions .btn-primary {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .btn-icon {
+        width: 100%;
+        height: 38px;
+    }
+    
+    /* Карточка-заглушка */
+    .textbook-card.placeholder .card-cover {
+        background: #e9ecef;
+    }
+    
+    .plus-icon {
+        font-size: 2.5rem;
+    }
+    
+    /* Недавние страницы */
+    .recent-section {
+        margin-bottom: 2rem;
+    }
+    
+    .recent-section h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .recent-list {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .recent-item {
+        min-width: 100%;
+        padding: 0.8rem;
+    }
+    
+    .recent-title {
+        font-size: 0.95rem;
+    }
+    
+    .recent-page {
+        font-size: 0.85rem;
+    }
+    
+    /* Таблица всех учебников */
+    .all-textbooks {
+        padding: 1rem;
+        overflow-x: auto;
+    }
+    
+    .all-textbooks h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .textbooks-table {
+        overflow-x: auto;
+    }
+    
+    .textbooks-table table {
+        min-width: 500px;
+    }
+    
+    .textbooks-table th {
+        padding: 0.8rem 0.5rem;
+        font-size: 0.85rem;
+    }
+    
+    .textbooks-table td {
+        padding: 0.8rem 0.5rem;
+        font-size: 0.85rem;
+    }
+    
+    .progress-table {
+        width: 150px;
+        gap: 0.5rem;
+    }
+    
+    .btn-small {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Маленькие телефоны */
+@media (max-width: 480px) {
+    .portal-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .portal-header p {
+        font-size: 0.9rem;
+    }
+    
+    .card-cover {
+        height: 140px;
+        padding: 0.8rem 1rem;
+    }
+    
+    .cover-title {
+        font-size: 1rem;
+    }
+    
+    .cover-subtitle {
+        font-size: 0.65rem;
+    }
+    
+    .cover-author {
+        font-size: 0.75rem;
+    }
+    
+    .cover-year {
+        font-size: 0.65rem;
+    }
+    
+    .card-info {
+        padding: 1rem;
+    }
+    
+    .card-info h3 {
+        font-size: 1rem;
+    }
+    
+    .recent-item {
+        padding: 0.7rem;
+    }
+    
+    .recent-title {
+        font-size: 0.9rem;
+    }
+    
+    .all-textbooks {
+        padding: 0.8rem;
+    }
+}
+
+/* Альбомная ориентация на мобильных */
+@media (max-width: 900px) and (orientation: landscape) {
+    .textbooks-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .card-cover {
+        height: 140px;
+    }
+    
+    .recent-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .recent-item {
+        min-width: calc(50% - 0.5rem);
+        flex: 1;
+    }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Anatomy of Catering - Читалка</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Верхняя панель -->
+    <header class="reader-header">
+        <div class="header-left">
+            <a href="index.html" class="back-to-portal">← Назад к порталу</a>
+            <div class="book-info">
+                <h1>The Anatomy of Catering</h1>
+                <span class="book-author">Г.Р. Гарипова, 2023</span>
+            </div>
+        </div>
+        <div class="header-right"> 
+            <button class="mobile-menu-btn" onclick="toggleSidebar()" id="mobileMenuBtn">Показать содержание</button>
+            <div class="user-menu">👤</div>
+        </div>
+    </header>
+
+    <!-- Кнопка для открытия меню на мобильных -->
+     <div>
+        
+     </div>
+    
+
+    <div class="reader-container">
+        <!-- Боковая панель с содержанием (всегда видна слева) -->
+        <aside class="sidebar visible" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Содержание</h3>
+            </div>
+            <div class="sidebar-content" id="tocList">
+                <!-- Заполняется из data.js -->
+            </div>
+        </aside>
+
+        <!-- Основная область с текстом (одна целая страница) -->
+        <main class="reader-main">
+            <div class="page-view-single" id="pageView">
+                <!-- Текущая страница загружается сюда -->
+                <div class="page-loader">Загрузка...</div>
+            </div>
+
+            <!-- Панель навигации по страницам -->
+            <div class="page-navigation">
+                <button class="nav-page-btn" id="prevPageBtn" onclick="goToPrevPage()">◀ Назад</button>
+                
+                <div class="page-jumper">
+                    <span>Страница</span>
+                    <input type="number" id="pageInput" min="1" max="24" value="1">
+                    <span>из 24</span>
+                    <button class="btn-small" onclick="goToPage()">Перейти</button>
+                </div>
+                
+                <button class="nav-page-btn" id="nextPageBtn" onclick="goToNextPage()">Вперед ▶</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Модальное окно поиска -->
+    <div class="modal" id="searchModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Поиск по учебнику</h3>
+                <button class="modal-close" onclick="closeSearch()">✕</button>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="search-input" placeholder="Введите слово или фразу...">
+                <div class="search-results" id="searchResults">
+                    <!-- Результаты поиска -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/cookie-manager.js"></script>
+    <script src="js/tasks.js"></script>
+    <script src="js/reader.js"></script>
+</body>
+</html>
