@@ -171,22 +171,58 @@ function checkTF(questionNum, value) {
 }
 
 // Проверка Matching
-function checkMatching(imageNum, value) {
-    const answerId = `match${imageNum}`;
-    const resultSpan = document.getElementById(`match${imageNum}-result`);
-    const correctAnswer = correctAnswers[answerId];
+function checkAllMatching() {
+    let correctCount = 0;
+    let totalCount = 5;
     
-    if (resultSpan) {
-        if (value === correctAnswer) {
-            resultSpan.innerHTML = ' ✓';
-            resultSpan.style.color = 'green';
-        } else {
-            resultSpan.innerHTML = ' ✗';
-            resultSpan.style.color = 'red';
+    for (let i = 1; i <= 5; i++) {
+        const select = document.querySelector(`select[data-image="${i}"]`);
+        const resultSpan = document.getElementById(`match${i}-result`);
+        const correctAnswer = correctAnswers[`match${i}`];
+        
+        if (select && select.value) {
+            if (select.value === correctAnswer) {
+                correctCount++;
+                if (resultSpan) {
+                    resultSpan.innerHTML = ' ✓';
+                    resultSpan.style.color = 'green';
+                }
+            } else {
+                if (resultSpan) {
+                    resultSpan.innerHTML = ' ✗';
+                    resultSpan.style.color = 'red';
+                }
+            }
         }
     }
     
-    saveTaskAnswer(answerId, value);
+    const resultDiv = document.getElementById('result-page12');
+    if (resultDiv) {
+        resultDiv.innerHTML = `✅ Правильно: ${correctCount} из ${totalCount}`;
+        resultDiv.className = 'task-result ' + (correctCount === totalCount ? 'success' : 'partial');
+    }
+}
+
+// Сброс всех Matching заданий
+function resetAllMatching() {
+    for (let i = 1; i <= 5; i++) {
+        const select = document.querySelector(`select[data-image="${i}"]`);
+        const resultSpan = document.getElementById(`match${i}-result`);
+        
+        if (select) {
+            select.value = '';
+        }
+        if (resultSpan) {
+            resultSpan.innerHTML = '';
+        }
+        
+        deleteCookie(`match${i}`);
+    }
+    
+    const resultDiv = document.getElementById('result-page12');
+    if (resultDiv) {
+        resultDiv.innerHTML = '';
+    }
 }
 
 // Проверка Gap-fill

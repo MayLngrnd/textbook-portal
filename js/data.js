@@ -552,6 +552,7 @@ const textbookData = {
                         
                         <div class="task" id="task-page12-matching">
                             <div class="matching-grid">
+                                <!-- A. fast food outlet -->
                                 <div class="matching-item">
                                     <div class="matching-image"></div>
                                     <img src="img/str12img1.png" width="300"/><br/>
@@ -566,8 +567,68 @@ const textbookData = {
                                     <span id="match1-result" class="match-result"></span>
                                 </div>
                                 
-                                <!-- ... еще 4 изображения ... -->
+                                 <!-- B. self-service -->
+                                <div class="matching-item">
+                                    <img src="img/str12img2.png" width="300"/><br/>
+                                    <select class="matching-select" data-image="2" onchange="checkMatching(2, this.value)">
+                                        <option value="">-- Выберите --</option>
+                                        <option value="fast food outlet">A. fast food outlet</option>
+                                        <option value="self-service">B. self-service</option>
+                                        <option value="buffet car">C. buffet car</option>
+                                        <option value="office block canteens">D. office block canteens</option>
+                                        <option value="pubs">E. pubs</option>
+                                    </select>
+                                    <span id="match2-result" class="match-result"></span>
+                                </div>
+
+                                <!-- C. buffet car -->
+                                <div class="matching-item">
+                                    <img src="img/str12img3.png" width="300"/><br/>
+                                    <select class="matching-select" data-image="3" onchange="checkMatching(3, this.value)">
+                                        <option value="">-- Выберите --</option>
+                                        <option value="fast food outlet">A. fast food outlet</option>
+                                        <option value="self-service">B. self-service</option>
+                                        <option value="buffet car">C. buffet car</option>
+                                        <option value="office block canteens">D. office block canteens</option>
+                                        <option value="pubs">E. pubs</option>
+                                    </select>
+                                    <span id="match3-result" class="match-result"></span>
+                                </div>
+
+                                <!-- D. office block canteens -->
+                                <div class="matching-item">
+                                    <img src="img/str12img4.png" width="300"/><br/>
+                                    <select class="matching-select" data-image="4" onchange="checkMatching(4, this.value)">
+                                        <option value="">-- Выберите --</option>
+                                        <option value="fast food outlet">A. fast food outlet</option>
+                                        <option value="self-service">B. self-service</option>
+                                        <option value="buffet car">C. buffet car</option>
+                                        <option value="office block canteens">D. office block canteens</option>
+                                        <option value="pubs">E. pubs</option>
+                                    </select>
+                                    <span id="match4-result" class="match-result"></span>
+                                </div>
+
+                                <!-- E. pubs -->
+                                <div class="matching-item">
+                                    <img src="img/str12img5.png" width="300"/><br/>
+                                    <select class="matching-select" data-image="5" onchange="checkMatching(5, this.value)">
+                                        <option value="">-- Выберите --</option>
+                                        <option value="fast food outlet">A. fast food outlet</option>
+                                        <option value="self-service">B. self-service</option>
+                                        <option value="buffet car">C. buffet car</option>
+                                        <option value="office block canteens">D. office block canteens</option>
+                                        <option value="pubs">E. pubs</option>
+                                    </select>
+                                    <span id="match5-result" class="match-result"></span>
+                                </div>
                             </div>
+
+                            <div class="task-controls">
+                                <button onclick="checkAllMatching()" class="btn-small">Проверить все</button>
+                                <button onclick="resetAllMatching()" class="btn-small btn-outline">Сбросить все</button>
+                            </div>
+                        <div id="result-page12" class="task-result"></div>
                         </div>
                     </div>
                 `
