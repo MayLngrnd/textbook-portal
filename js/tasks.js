@@ -171,6 +171,24 @@ function checkTF(questionNum, value) {
 }
 
 // Проверка Matching
+function checkMatching(imageNum, value) {
+    const answerId = `match${imageNum}`;
+    const resultSpan = document.getElementById(`match${imageNum}-result`);
+    const correctAnswer = correctAnswers[answerId];
+    
+    if (resultSpan) {
+        if (value === correctAnswer) {
+            resultSpan.innerHTML = ' ✓';
+            resultSpan.style.color = 'green';
+        } else {
+            resultSpan.innerHTML = ' ✗';
+            resultSpan.style.color = 'red';
+        }
+    }
+    
+    saveTaskAnswer(answerId, value);
+}
+
 function checkAllMatching() {
     let correctCount = 0;
     let totalCount = 5;
