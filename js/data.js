@@ -17,20 +17,24 @@ const textbookData = {
                         <p class="university">ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ ВЫСШЕГО ОБРАЗОВАНИЯ</p>
                         <p class="university">«БАШКИРСКИЙ ГОСУДАРСТВЕННЫЙ АГРАРНЫЙ УНИВЕРСИТЕТ»</p>
                         
-                        <div class="author-name">Г. Р. ГАРИПОВА</div>
+                        <div class="author">Г. Р. ГАРИПОВА</div>
                         
                         <h1>The Anatomy of Catering</h1>
                         <h2>(Business English for Food Technologists)</h2>
                         
                         <p class="subtitle">Учебное пособие по английскому языку</p>
                         
-                        <p class="recommendation">Рекомендовано научно-методическим советом ФГБОУ ВО Башкирский ГАУ</p>
-                        <p class="recommendation">в качестве учебного пособия по английскому языку для обучающихся</p>
-                        <p class="recommendation">направления бакалавриата «Технология продукции и организация общественного питания»</p>
+                        <div class="recommendation">
+                            <p>Рекомендовано научно-методическим советом ФГБОУ ВО Башкирский ГАУ</p>
+                            <p>в качестве учебного пособия по английскому языку для обучающихся</p>
+                            <p>направления бакалавриата «Технология продукции и организация общественного питания»</p>
+                        </div>
                         
-                        <p class="place">Уфа</p>
-                        <p class="publisher">Башкирский ГАУ</p>
-                        <p class="year">2023</p>
+                        <div class="publisher-info">
+                            <p>Уфа</p>
+                            <p>Башкирский ГАУ</p>
+                            <p>2023</p>
+                        </div>
                     </div>
                 `
             },
@@ -67,14 +71,9 @@ const textbookData = {
                         
                         <p class="annotation">Учебное пособие развивает у обучающихся способности применять современные коммуникативные технологии на иностранных языках для профессионального взаимодействия согласно ФГОС ВО. Пособие предназначено для аудиторной и самостоятельной работы бакалавров, обучающихся по направлению 19.03.04 «Технология продукции и организация общественного питания» в рамках дисциплины «Деловой иностранный язык».</p>
                         
-                        <div class="copyright">
-                            <p><strong>УДК 811.642(07)</strong></p>
-                            <p><strong>ББК 65.431я7</strong></p>
-                        </div>
-                        
                         <div class="copyright-bottom">
                             <p>© Гарипова Г.Р., 2023</p>
-                            <p>ISBN 978-5-7456-0856-8 © ФГБОУ ВО Башкирский ГАУ, 2023</p>
+                            <p>© ФГБОУ ВО Башкирский ГАУ, 2023</p>
                         </div>
                     </div>
                 `
@@ -83,156 +82,42 @@ const textbookData = {
             // ===== СТРАНИЦА 3 - СОДЕРЖАНИЕ (НАЧАЛО) =====
             3: {
                 type: 'contents',
-                title: 'Содержание (начало)',
+                title: 'Содержание',
                 content: `
                     <h2 class="contents-title">СОДЕРЖАНИЕ</h2>
-                    
-                    <div class="contents-page">
-                        <div class="contents-item">
-                            <span class="contents-chapter">ВВЕДЕНИЕ</span>
-                            <span class="contents-dots"></span>
-                            <span class="contents-page">4</span>
-                        </div>
+        
+                    <div class="contents-list">
+                        <div class="contents-item"><span>ВВЕДЕНИЕ</span><span class="dots"></span><span>4</span></div>
                         
-                        <div class="contents-item">
-                            <span class="contents-chapter">PART I PROFESSIONAL ENGLISH</span>
-                            <span class="contents-dots"></span>
-                            <span class="contents-page">5</span>
-                        </div>
+                        <div class="contents-item"><span>PART I. PROFESSIONAL ENGLISH</span><span class="dots"></span><span>5</span></div>
+                        <div class="contents-item level-1"><span>Unit I. Introduction To Hospitality Industry</span><span class="dots"></span><span>5</span></div>
+                        <div class="contents-item level-2"><span>Lesson 1. Hospitality Industry</span><span class="dots"></span><span>5</span></div>
+                        <div class="contents-item level-2"><span>Lesson 2. Catering Industry</span><span class="dots"></span><span>12</span></div>
+                        <div class="contents-item level-2"><span>Lesson 3. Types of Catering</span><span class="dots"></span><span>14</span></div>
+                        <div class="contents-item level-2"><span>Lesson 4. Diversity of Food Service Styles</span><span class="dots"></span><span>18</span></div>
                         
-                        <div class="contents-item indent-1">
-                            <span class="contents-chapter">Unit I Introduction To Hospitality Industry</span>
-                            <span class="contents-dots"></span>
-                            <span class="contents-page">5</span>
-                        </div>
+                        <div class="contents-item level-1"><span>Unit II. Food And Nutrition</span><span class="dots"></span><span>25</span></div>
+                        <div class="contents-item level-2"><span>Lesson 1. What Is Food and Nutrition?</span><span class="dots"></span><span>25</span></div>
                         
-                        <div class="contents-item indent-2">
-                            <span class="contents-chapter">Lesson 1 Hospitality Industry</span>
-                            <span class="contents-dots"></span>
-                            <span class="contents-page">5</span>
-                        </div>
+                        <div class="contents-item level-1"><span>Unit III. Food And Safety</span><span class="dots"></span><span>30</span></div>
+                        <div class="contents-item level-2"><span>Lesson 1. Ancillary Department</span><span class="dots"></span><span>30</span></div>
+                        <div class="contents-item level-2"><span>Lesson 2. Personal Hygiene and Food Safety</span><span class="dots"></span><span>35</span></div>
+                        <div class="contents-item level-2"><span>Lesson 3. Good Food Hygiene</span><span class="dots"></span><span>38</span></div>
                         
-                        <div class="contents-item indent-2">
-                            <span class="contents-chapter">Lesson 2 Catering industry</span>
-                            <span class="contents-dots"></span>
-                            <span class="contents-page">12</span>
-                        </div>
+                        <div class="contents-item"><span>PART II. BUSINESS ENGLISH</span><span class="dots"></span><span>41</span></div>
+                        <div class="contents-item level-1"><span>Unit I. Restaurant Business</span><span class="dots"></span><span>41</span></div>
+                        <div class="contents-item level-2"><span>Lesson 1. Duties and Responsibilities of the Restaurant Staff</span><span class="dots"></span><span>41</span></div>
+                        <div class="contents-item level-2"><span>Lesson 2. Menu</span><span class="dots"></span><span>45</span></div>
+                        <div class="contents-item level-2"><span>Lesson 3. How To Start Restaurant Business</span><span class="dots"></span><span>48</span></div>
                         
-                        <div class="contents-item indent-2">
-                            <span class="contents-chapter">Lesson 3 Types of Catering</span>
-                            <span class="contents-dots"></span>
-                            <span class="contents-page">14</span>
-                        </div>
+                        <div class="contents-item"><span>PART III. TEXTS FOR ADDITIONAL READING</span><span class="dots"></span><span>51</span></div>
                         
-                        <div class="contents-item indent-2">
-                            <span class="contents-chapter">Lesson 4 Diversity of Food Service Styles</span>
-                            <span class="contents-dots"></span>
-                            <span class="contents-page">18</span>
-                        </div>
+                        <div class="contents-item"><span>APPENDIX 1</span><span class="dots"></span><span>61</span></div>
+                        <div class="contents-item"><span>APPENDIX 2</span><span class="dots"></span><span>72</span></div>
+                        <div class="contents-item"><span>APPENDIX 3</span><span class="dots"></span><span>79</span></div>
+                        <div class="contents-item"><span>APPENDIX 4</span><span class="dots"></span><span>85</span></div>
                         
-                        <div class="contents-item indent-1">
-                            <span class="contents-chapter">Unit II Food And Nutrition</span>
-                            <span class="contents-dots"></span>
-                            <span class="contents-page">25</span>
-                        </div>
-                        
-                        <div class="contents-item indent-2">
-                            <span class="contents-chapter">Lesson 1 What Is Food and Nutrition?</span>
-                            <span class="contents-dots"></span>
-                            <span class="contents-page">25</span>
-                        </div>
-                    </div>
-
-                    <div class="contents-page">
-                        <div class="contents-item indent-1">
-                            <span class="contents-chapter">Unit III Food And Safety</span>
-                            <span class="contents-dots"></span>
-                            <span class="contents-page">30</span>
-                        </div>
-                        
-                        <div class="contents-item indent-2">
-                            <span class="contents-chapter">Lesson 1 Ancillary Department</span>
-                            <span class="contents-dots"></span>
-                            <span class="contents-page">30</span>
-                        </div>
-                        
-                        <div class="contents-item indent-2">
-                            <span class="contents-chapter">Lesson 2 Personal Hygiene and Food Safety</span>
-                            <span class="contents-dots"></span>
-                            <span class="contents-page">35</span>
-                        </div>
-                        
-                        <div class="contents-item indent-2">
-                            <span class="contents-chapter">Lesson 3 Good Food Hygiene</span>
-                            <span class="contents-dots"></span>
-                            <span class="contents-page">38</span>
-                        </div>
-                        
-                        <div class="contents-item">
-                            <span class="contents-chapter">PART II BUSINESS ENGLISH</span>
-                            <span class="contents-dots"></span>
-                            <span class="contents-page">41</span>
-                        </div>
-                        
-                        <div class="contents-item indent-1">
-                            <span class="contents-chapter">Unit I Restaurant Business</span>
-                            <span class="contents-dots"></span>
-                            <span class="contents-page">41</span>
-                        </div>
-                        
-                        <div class="contents-item indent-2">
-                            <span class="contents-chapter">Lesson 1 Duties and Responsibilities of the Restaurant Staff</span>
-                            <span class="contents-dots"></span>
-                            <span class="contents-page">41</span>
-                        </div>
-                        
-                        <div class="contents-item indent-2">
-                            <span class="contents-chapter">Lesson 2 Menu</span>
-                            <span class="contents-dots"></span>
-                            <span class="contents-page">45</span>
-                        </div>
-                        
-                        <div class="contents-item indent-2">
-                            <span class="contents-chapter">Lesson 3 How To Start Restaurant Business</span>
-                            <span class="contents-dots"></span>
-                            <span class="contents-page">48</span>
-                        </div>
-                        
-                        <div class="contents-item">
-                            <span class="contents-chapter">PART III. TEXTS FOR ADDITIONAL READING</span>
-                            <span class="contents-dots"></span>
-                            <span class="contents-page">51</span>
-                        </div>
-                        
-                        <div class="contents-item">
-                            <span class="contents-chapter">APPENDIX 1</span>
-                            <span class="contents-dots"></span>
-                            <span class="contents-page">61</span>
-                        </div>
-                        
-                        <div class="contents-item">
-                            <span class="contents-chapter">APPENDIX 2</span>
-                            <span class="contents-dots"></span>
-                            <span class="contents-page">72</span>
-                        </div>
-                        
-                        <div class="contents-item">
-                            <span class="contents-chapter">APPENDIX 3</span>
-                            <span class="contents-dots"></span>
-                            <span class="contents-page">79</span>
-                        </div>
-                        
-                        <div class="contents-item">
-                            <span class="contents-chapter">APPENDIX 4</span>
-                            <span class="contents-dots"></span>
-                            <span class="contents-page">85</span>
-                        </div>
-                        
-                        <div class="contents-item">
-                            <span class="contents-chapter">BIBLIOGRAPHY</span>
-                            <span class="contents-dots"></span>
-                            <span class="contents-page">90</span>
-                        </div>
+                        <div class="contents-item"><span>BIBLIOGRAPHY</span><span class="dots"></span><span>90</span></div>
                     </div>
                 `
             },
@@ -836,7 +721,7 @@ const textbookData = {
         },
         tableOfContents: [
             { page: 1, title: 'Титульный лист', level: 0 },
-            { page: 2, title: 'Выходные данные', level: 0 },
+            { page: 2, title: 'Аннотация', level: 0 },
             { page: 3, title: 'Содержание', level: 0 },
             { page: 4, title: 'Введение', level: 0 },
             { page: 5, title: 'PART I. PROFESSIONAL ENGLISH', level: 1 },

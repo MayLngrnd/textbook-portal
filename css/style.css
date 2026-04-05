@@ -357,6 +357,171 @@ body {
     font-size: 0.9rem;
 }
 
+/* ===== СТИЛИ ДЛЯ СОДЕРЖАНИЯ ===== */
+.contents-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contents-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.contents-item.level-1 {
+    padding-left: 20px;
+    font-weight: 500;
+}
+
+.contents-item.level-2 {
+    padding-left: 40px;
+    font-size: 14px;
+}
+
+.dots {
+    flex: 1;
+    border-bottom: 1px dotted #999;
+    margin: 0 8px;
+    height: 1em;
+}
+
+.contents-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* ===== СТИЛИ ДЛЯ ТИТУЛЬНОГО ЛИСТА И АННОТАЦИИ ===== */
+
+/* Титульный лист */
+.title-page {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.title-page .ministry {
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.title-page .university {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
+.title-page .author {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 50px 0 30px;
+    letter-spacing: 2px;
+}
+
+.title-page h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 30px 0 10px;
+    border-bottom: none;
+}
+
+.title-page h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 0 30px;
+    color: #4a5568;
+}
+
+.title-page .subtitle {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 30px 0;
+    text-transform: uppercase;
+}
+
+.title-page .recommendation {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #4a5568;
+}
+
+.title-page .publisher-info {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Аннотация */
+.copyright-page {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.copyright-page .udk,
+.copyright-page .bbk,
+.copyright-page .signature {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.copyright-page .reviewers-title {
+    text-align: center;
+    font-weight: 600;
+    margin: 30px 0 15px;
+}
+
+.copyright-page .reviewer {
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 5px 0;
+}
+
+.copyright-page .citation {
+    text-align: center;
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-left: 4px solid #4361ee;
+    font-size: 13px;
+}
+
+.copyright-page .isbn {
+    text-align: left;
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+.copyright-page .annotation {
+    text-align: left;
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 30px 0;
+}
+
+.copyright-page .copyright-bottom {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 12px;
+    border-top: 1px solid #dee2e6;
+    padding-top: 20px;
+}
+
 /* ===== КНОПКА ПОКАЗАТЬ СОДЕРЖАНИЕ ===== */
 .mobile-menu-btn {
     display: block;
