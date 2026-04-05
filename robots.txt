@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /js/
+Disallow: /css/
+Disallow: /img/
+
+Sitemap: https://maylngrnd.github.io/textbook-portal/sitemap.xml
+Host: https://maylngrnd.github.io/textbook-portal/
