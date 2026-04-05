@@ -5,7 +5,7 @@ const textbookData = {
         title: 'The Anatomy of Catering',
         author: 'Г.Р. Гарипова',
         year: 2023,
-        totalPages: 24,
+        totalPages: 12,
         pages: {
             // ===== СТРАНИЦА 1 - ТИТУЛЬНЫЙ ЛИСТ =====
             1: {
@@ -142,16 +142,7 @@ const textbookData = {
                             <span class="contents-page">25</span>
                         </div>
                     </div>
-                `
-            },
-            
-            // ===== СТРАНИЦА 4 - СОДЕРЖАНИЕ (ПРОДОЛЖЕНИЕ) =====
-            4: {
-                type: 'contents',
-                title: 'Содержание (продолжение)',
-                content: `
-                    <h2 class="contents-title">СОДЕРЖАНИЕ (продолжение)</h2>
-                    
+
                     <div class="contents-page">
                         <div class="contents-item indent-1">
                             <span class="contents-chapter">Unit III Food And Safety</span>
@@ -245,9 +236,9 @@ const textbookData = {
                     </div>
                 `
             },
-            
-            // ===== СТРАНИЦА 5 - ВВЕДЕНИЕ =====
-            5: {
+                       
+            // ===== СТРАНИЦА 4 - ВВЕДЕНИЕ =====
+            4: {
                 type: 'intro',
                 title: 'Введение',
                 content: `
@@ -267,8 +258,8 @@ const textbookData = {
                 `
             },
             
-            // ===== СТРАНИЦА 6 - PART I, UNIT I, LESSON 1 (НАЧАЛО) =====
-            6: {
+            // ===== СТРАНИЦА 5 - PART I, UNIT I, LESSON 1 (НАЧАЛО) =====
+            5: {
                 type: 'lesson',
                 title: 'Lesson 1. Hospitality Industry (начало)',
                 content: `
@@ -358,53 +349,39 @@ const textbookData = {
                 `
             },
             
+            // ===== СТРАНИЦА 6 =====
+            6: {
+                type: 'lesson',
+                title: 'Lesson 1. Hospitality Industry (продолжение)',
+                content: `
+                    <div class="section">
+                        <h4>Reading activity</h4>
+                        <b><p>Task 1. Read the text using a dictionary</p></b>
+                        <p><strong>On-premises</strong> — food prepared and served at the place where the function is held</p>
+                        <p><strong>Off-premises</strong> — food prepared in a place away from the place where it is served</p>
+                        
+                        <p>The hospitality industry is a multibillion-dollar industry that depends on the availability of leisure time, disposable income, and complete customer satisfaction. There are four segments of the hospitality industry: Food and beverages, Travel and Tourism, lodging, and recreation.</p>
+                        
+                        <p><strong>The food and beverage</strong> sector which is professionally known by its initials as F&B is the largest segment of the hospitality industry. The F&B industry is estimated to provide 50% of all meals eaten in the US today. It comprises of establishments primarily engaged in preparing meals, snacks, and beverages for immediate consumption on and off the premises. When a restaurant is part of a hotel, services it renders can enhance the guest experience by providing excellent food and first-class customer service. It can symbiotically function as part of other businesses, such as in bowling alleys or movie theaters.</p>
+                        
+                        <p><strong>Travel and tourism</strong> deal with services related to moving people from place to place. Buses, cabs, planes, ships, trains and so on are all part of the travel industry. Leisure travel is when a person spends money on lodging, food, and recreation while taking a vacation trip, and business travel is when a person travels for work and spends money on lodging and food. Some people also spend on recreation while on a business travel. The major function of the tourism is to encourage people to travel. When people travel, either for business or leisure, they spend money on hospitality.</p>
+                    </div>
+                `
+            },
+            
             // ===== СТРАНИЦА 7 =====
             7: {
                 type: 'lesson',
                 title: 'Lesson 1. Hospitality Industry (продолжение)',
                 content: `
                     <div class="section">
-                        <h4>Reading activity</h4>
-                        <p><strong>On-premises</strong> — food prepared and served at the place where the function is held</p>
-                        <p><strong>Off-premises</strong> — food prepared in a place away from the place where it is served</p>
                         
-                        <p>The hospitality industry is a multibillion-dollar industry that depends on the availability of leisure time, disposable income, and complete customer satisfaction. There are four segments of the hospitality industry: Food and beverages, Travel and Tourism, lodging, and recreation.</p>
+                        <p><strong>Lodging</strong> means accommodation for a period or a place to sleep for one or more nights. Fancy hotels, youth hostels, elder hostels, campgrounds, motels and other businesses that provide a place for people to sleep overnight are all in the lodging industry. Lodging businesses markets to other market segments such as business travelers, leisure travelers, long-stay travelers, budget travelers, and special travelers like people working with the government, airlines, and military.</p>
                         
-                        <p><strong>The food and beverage</strong> sector which is professionally known by its initials as F&B is the largest segment of the hospitality industry.</p>
-                        
-                        <p>The F&B industry is estimated to provide 50% of all meals eaten in the US today. It comprises of establishments primarily engaged in preparing meals, snacks, and beverages for immediate consumption on and off the premises. When a restaurant is part of a hotel, services it renders can enhance the guest experience by providing excellent food and first-class customer service. It can symbiotically function as part of other businesses, such as in bowling alleys or movie theaters.</p>
-                        
-                        <p><strong>Travel and tourism</strong> deal with services related to moving people from place to place. Buses, cabs, planes, ships, trains and so on are all part of the travel industry. Leisure travel is when a person spends money on lodging, food, and recreation while taking a vacation trip, and business travel is when a person travels for work and spends money on lodging and food. Some people also spend on recreation while on a business travel.</p>
+                        <p><strong>Recreation</strong> is any activity that people do for rest, relaxation, and enjoyment. The goal of recreation is to refresh a person's body and mind. Any business that provides activities for rest, relaxation and enjoyment, to refresh a person's body and mind is in the recreation business. Entertainment businesses which provide shows such as movie or theater, attractions which are places of special interest of visits such as zoos and museums, spectator sports and participatory sports are all parts of the recreation business.</p>
                     </div>
-                `
-            },
-            
-            // ===== СТРАНИЦА 8 =====
-            8: {
-                type: 'lesson',
-                title: 'Lesson 1. Hospitality Industry (продолжение)',
-                content: `
-                    <div class="section">
-                        <p>The major function of the tourism is to encourage people to travel. When people travel, either for business or leisure, they spend money on hospitality.</p>
-                        
-                        <p><strong>Lodging</strong> means accommodation for a period or a place to sleep for one or more nights. Fancy hotels, youth hostels, elder hostels, campgrounds, motels and other businesses that provide a place for people to sleep overnight are all in the lodging industry.</p>
-                        
-                        <p>Lodging businesses markets to other market segments such as business travelers, leisure travelers, long-stay travelers, budget travelers, and special travelers like people working with the government, airlines, and military.</p>
-                        
-                        <p><strong>Recreation</strong> is any activity that people do for rest, relaxation, and enjoyment. The goal of recreation is to refresh a person's body and mind. Any business that provides activities for rest, relaxation and enjoyment, to refresh a person's body and mind is in the recreation business.</p>
-                        
-                        <p>Entertainment businesses which provide shows such as movie or theater, attractions which are places of special interest of visits such as zoos and museums, spectator sports and participatory sports are all parts of the recreation business.</p>
-                    </div>
-                `
-            },
-            
-            // ===== СТРАНИЦА 9 =====
-            9: {
-                type: 'lesson',
-                title: 'Lesson 1. Hospitality Industry (обсуждение)',
-                content: `
-                    <div class="section">
-                        <h4>Discussing activity</h4>
+
+                    <h4>Discussing activity</h4>
                         <p><strong>Task 1. Answer the following questions:</strong></p>
                         
                         <ol>
@@ -424,15 +401,15 @@ const textbookData = {
                     </div>
                     
                     <div class="notes-section">
-                        <label for="notes-page9">Ваши заметки:</label>
-                        <textarea id="notes-page9" class="notes-textarea" rows="4" placeholder="Запишите свои мысли..."></textarea>
-                        <button onclick="saveNotes(9)" class="btn-small">Сохранить заметки</button>
+                        <label for="notes-page7">Ваши заметки:</label>
+                        <textarea id="notes-page7" class="notes-textarea" rows="4" placeholder="Запишите свои мысли..."></textarea>
+                        <button onclick="saveNotes(7)" class="btn-small">Сохранить заметки</button>
                     </div>
                 `
             },
             
-            // ===== СТРАНИЦА 10 =====
-            10: {
+            // ===== СТРАНИЦА 8 =====
+            8: {
                 type: 'lesson',
                 title: 'Lesson 1. Hospitality Industry (видео)',
                 content: `
@@ -489,14 +466,9 @@ const textbookData = {
                             </div>
                         </div>
                     </div>
-                `
-            },
-            
-            // ===== СТРАНИЦА 11 =====
-            11: {
-                type: 'lesson',
-                title: 'Lesson 2. Catering Industry (начало)',
-                content: `
+                    
+                    <br>
+
                     <h3>Lesson 2 Catering industry</h3>
                     
                     <div class="section">
@@ -542,8 +514,9 @@ const textbookData = {
                     </div>
                 `
             },
-            // ===== СТРАНИЦА 12 =====
-            12: {
+            
+            // ===== СТРАНИЦА 9 =====
+            9: {
                 type: 'lesson',
                 title: 'Lesson 2. Catering Industry (задания на соответствие)',
                 content: `
@@ -633,8 +606,8 @@ const textbookData = {
                     </div>
                 `
             },
-            // ===== СТРАНИЦА 13 - Заполнение пропусков (Gap-fill) =====
-            13: {
+            // ===== СТРАНИЦА 10 - Заполнение пропусков (Gap-fill) =====
+            10: {
                 type: 'lesson',
                 title: 'Lesson 2. Catering Industry (заполнение пропусков)',
                 content: `
@@ -725,36 +698,157 @@ const textbookData = {
                         </div>
                         <div id="result-page13" class="task-result"></div>
                     </div>
+
+                    <br>
+
+                    <p><strong>Task 5. Fill in the table with the information from the text. Write the words in the correct columns.</strong></p>
+                    <p><em>Термины для распределения: Hotels, Restaurants, Pubs, Fast food outlets, Schools, Hospitals, Prisons, Airports, Railway stations, Factory canteens, Wedding receptions, Military catering</em></p>
+                    
+                    <div class="task" id="task-page10-classification">
+                        <div class="table-responsive">
+                            <table class="task-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 33%">Military catering</th>
+                                        <th style="width: 33%">Commercial catering</th>
+                                        <th style="width: 33%">Non-commercial catering</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input type="text" class="class-input" data-category="military" data-row="0" placeholder="введите термин">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="class-input" data-category="commercial" data-row="0" placeholder="введите термин">
+                                            <input type="text" class="class-input" data-category="commercial" data-row="1" placeholder="введите термин">
+                                            <input type="text" class="class-input" data-category="commercial" data-row="2" placeholder="введите термин">
+                                            <input type="text" class="class-input" data-category="commercial" data-row="3" placeholder="введите термин">
+                                            <input type="text" class="class-input" data-category="commercial" data-row="4" placeholder="введите термин">
+                                            <input type="text" class="class-input" data-category="commercial" data-row="5" placeholder="введите термин">
+                                            <input type="text" class="class-input" data-category="commercial" data-row="6" placeholder="введите термин">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="class-input" data-category="noncommercial" data-row="0" placeholder="введите термин">
+                                            <input type="text" class="class-input" data-category="noncommercial" data-row="1" placeholder="введите термин">
+                                            <input type="text" class="class-input" data-category="noncommercial" data-row="2" placeholder="введите термин">
+                                            <input type="text" class="class-input" data-category="noncommercial" data-row="3" placeholder="введите термин">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="task-controls">
+                            <button onclick="checkClassificationTable()" class="btn-small">Проверить</button>
+                            <button onclick="resetClassificationTable()" class="btn-small btn-outline">Сбросить</button>
+                        </div>
+                        <div id="classification-table-result" class="task-result"></div>
+                    </div>
+                </div>
                 `
             },
+            
+            // ===== СТРАНИЦА 11 - Lesson 3. Types of Catering (начало) =====
+            11: {
+                type: 'lesson',
+                title: 'Lesson 3. Types of Catering (начало)',
+                content: `
+                    <h3>Lesson 3. Types of Catering</h3>
+                    
+                    <div class="section">
+                        <h4>Pre-reading activity</h4>
+                        <p>Look through the text and explain what you understand by words given <b>in bold.</b></p>
+                        
+                        <h4>Task 1. Read the text using dictionary.</h4>
+                        <p>Provision of food for an event is as essential as the event itself. However, for a first-time planner, choosing the type of catering that fits your event can be a daunting task. With the wide variety of <b>food options</b> it can be a little tough to choose effectively. Be learning more about each type of catering, this will make it easier to select the type of catering you will need for your event. Here are the six different types of catering:</p>
+                        
+                        <h4>1. Corporate Catering</h4>
+                        <p>Corporate catering depends on the size and level of the function being hosted. Corporate functions may range from small gatherings to fancy dinners. These require a specific type of structure when catering for them. Some companies would prefer a small open bar for its residents while others will opt for a small <b>foods tasting session</b>. Corporate functions are elegant and very relaxed and should be catered for with regard to this fact.</p>
+                        
+                        <h4>2. Wedding Catering</h4>
+                        <p>Wedding catering is one of the most common forms of <b>large-scale catering</b>. One of the most critical aspects of a wedding is the reception, which mainly focuses on the food offered to guests. Weddings can be tricky since you may never be able to accurately estimate the number of people to be present during the wedding. The menu should reflect the diversity of the invited guests with a view to catering to different tastes. Aside from the food and the wine, the <b>caterer</b> is also in charge of table settings and displays, which vary for different functions.</p>
+
+                        <h4>3. Social Event Catering</h4>
+                        <p>Retirement parties, birthdays, baby and bridal showers always call for celebration. These functions are more intimate and demand attention to detail, especially when it comes to catering. Due to their small nature, always make an effort to service clients' <b>specific dietary needs</b>. Attention to people's <b>allergens</b> should be noted to avoid cases of inflamed allergies arising from food intake. Also, cultural beliefs should be considered to avoid the chance of providing prohibited foods during such gatherings. Additional options, aside from the food, such as the theme colour of the event, should also be factored. Compared to weddings and other large gatherings, small social events do not require a large presence of <b>on-site staff</b>. This is done to emphasize the intimate nature of such gatherings.</p>
+                        
+                        <h4>4. Concession Catering</h4>
+                        <p>Public events, major sporting events, and large music concerts fall into this category. Wherever you find large crowds of people gathered, chances are there is food on site. In such cases, only the most popular foods are provided since it is difficult <b>to cater</b> to everyone's specific dietary needs. For instance, it makes sense to have popular fast food bars instead of <b>full course food options</b>.</p>
+                        
+                        <h4>5. Food Truck Catering</h4>
+                        <p>This is a highly popular catering option for small outdoor functions or functions with many <b>food vendors</b>. They do not require a large staff. Two or four are enough to facilitate the preparation of food and serve people, which is mainly done through a window. Food selection can range from the very simple to fancy depending on a customer's needs and the nature of the event.</p>
+                        
+                        <h4>6. Restaurant Catering</h4>
+                        <p>If you are hosting an event and would like a more advanced menu than the usual, restaurant catering is the way to go. For instance, if your event is being held within a hotel's premises, using one of the hotel's recommended restaurant caterers is highly advised. You might even get such a catering service as a package, which will save you the hustle of planning for all the intricate details. Some restaurants also provide <b>outside catering</b> should you want the same services at a different location. The caterers might also provide <b>table dressing services</b> if you wish to make the event beautiful and immersive. Understanding the different types of catering services helps you make an informed decision when choosing a caterer for your gathering. The food provided at the event is as important as the event itself since it brings people together, and since people have varying tastes and dietary needs, aligning the menu with this in mind will make for an unforgettable event.</p>
+                    </div>
+                `
+            },
+            
+            // ===== СТРАНИЦА 12 - Lesson 3. Types of Catering (обсуждение) =====
+            12: {
+                type: 'lesson',
+                title: 'Lesson 3. Types of Catering (обсуждение)',
+                content: `
+                    <div class="section">
+                        <h4>Task 2. Discussing activity</h4>
+                        
+                        <p><strong>Answer the questions:</strong></p>
+                        <ol>
+                            <li>What are the types of catering?</li>
+                            <li>What do you understand by each of them?</li>
+                            <li>What is the difference between these two types of catering?</li>
+                            <li>What are the three categories of caterers? What do they cater?</li>
+                        </ol>
+                        
+                        <h4>Vocabulary</h4>
+                        <p><em>Give English equivalents for:</em></p>
+                        <p>Грандиозная, очень сложная задача; выбор блюд; корпоративный кейтеринг; ресторанное обслуживание; широкомасштабное ресторанное обслуживание; поставщик ресторанной провизии; избегать вспышки внезапной аллергии; персонал ресторана; поставщики продуктов питания; обеспечивать приготовление пищи.</p>
+                        
+                        <p><em>Give Russian equivalents for:</em></p>
+                        <p>from small gatherings to fancy dinners; small open bar; focus on the food offered to guests; diversity; table settings and displays; attention to detail; food intake; fast food bars; large staff; within a hotel's premises; an unforgettable event.</p>
+                        
+                        <h4>Video activity</h4>
+                        <p><em>Click this link, watch the video on different types of catering and be ready to answer the questions:</em></p>
+                        <p><a href="#" onclick="window.open('https://www.youtube.com/watch?v=sslmS_UKJYY', '_blank')">https://www.youtube.com/watch?v=sslmS_UKJYY</a></p>
+                        
+                        <div class="video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/sslmS_UKJYY" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <div class="task">
+                        <p>1. Name the types of catering mentioned in the video.</p>
+                        <p>2. Characterize each of the catering types.</p>
+                        <p>3. What are the peculiarities of each type of catering?</p>
+                        <p>4. What type of catering do you fins the most interesting for you work and why?</p>
+                    </div>
+                    
+                    <div class="notes-section">
+                        <label for="notes-page12">Ваши ответы:</label>
+                        <textarea id="notes-page12" class="notes-textarea" rows="4" placeholder="Запишите свои мысли..."></textarea>
+                        <button onclick="saveNotes(12)" class="btn-small">Сохранить</button>
+                    </div>
+                `
+            },
+            
+
+
         },
         tableOfContents: [
             { page: 1, title: 'Титульный лист', level: 0 },
             { page: 2, title: 'Выходные данные', level: 0 },
-            { page: 3, title: 'Содержание (начало)', level: 0 },
-            { page: 4, title: 'Содержание (продолжение)', level: 0 },
-            { page: 5, title: 'Введение', level: 0 },
-            { page: 6, title: 'PART I. PROFESSIONAL ENGLISH', level: 1 },
-            { page: 6, title: 'UNIT I. INTRODUCTION TO HOSPITALITY INDUSTRY', level: 1 },
-            { page: 6, title: 'Lesson 1. Hospitality Industry (начало)', level: 2 },
+            { page: 3, title: 'Содержание', level: 0 },
+            { page: 4, title: 'Введение', level: 0 },
+            { page: 5, title: 'PART I. PROFESSIONAL ENGLISH', level: 1 },
+            { page: 5, title: 'UNIT I. INTRODUCTION TO HOSPITALITY INDUSTRY', level: 1 },
+            { page: 5, title: 'Lesson 1. Hospitality Industry (начало)', level: 2 },
+            { page: 6, title: 'Lesson 1. Hospitality Industry (продолжение)', level: 2 },
             { page: 7, title: 'Lesson 1. Hospitality Industry (продолжение)', level: 2 },
-            { page: 8, title: 'Lesson 1. Hospitality Industry (продолжение)', level: 2 },
-            { page: 9, title: 'Lesson 1. Hospitality Industry (обсуждение)', level: 2 },
-            { page: 10, title: 'Lesson 1. Hospitality Industry (видео)', level: 2 },
-            { page: 11, title: 'Lesson 2. Catering Industry (начало)', level: 2 },
-            { page: 12, title: 'Lesson 2. Catering Industry (задания)', level: 2 },
-            { page: 13, title: 'Lesson 2. Catering Industry (продолжение)', level: 2 },
-            { page: 14, title: 'Lesson 2. Catering Industry (заполнение пропусков)', level: 2 },
-            { page: 15, title: 'Lesson 2. Catering Industry (классификация)', level: 2 },
-            { page: 16, title: 'Lesson 3. Types of Catering (начало)', level: 2 },
-            { page: 17, title: 'Lesson 3. Types of Catering (продолжение)', level: 2 },
-            { page: 18, title: 'Lesson 3. Types of Catering (продолжение)', level: 2 },
-            { page: 19, title: 'Lesson 3. Types of Catering (обсуждение)', level: 2 },
-            { page: 20, title: 'Lesson 3. Types of Catering (видео)', level: 2 },
-            { page: 21, title: 'Lesson 4. Food Service Styles (начало)', level: 2 },
-            { page: 22, title: 'Lesson 4. Food Service Styles (продолжение)', level: 2 },
-            { page: 23, title: 'Lesson 4. Food Service Styles (продолжение)', level: 2 },
-            { page: 24, title: 'Lesson 4. Food Service Styles (обсуждение)', level: 2 }
+            { page: 8, title: 'Lesson 2. Catering Industry (начало)', level: 2 },
+            { page: 9, title: 'Lesson 2. Catering Industry (задания)', level: 2 },
+            { page: 10, title: 'Lesson 3. Types of Catering (начало)', level: 2 },
+            { page: 11, title: 'Lesson 3. Types of Catering (продолжение)', level: 2 },
+            { page: 12, title: 'Lesson 3. Types of Catering (продолжение)', level: 2 }
         ]
     }
 }

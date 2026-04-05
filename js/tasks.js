@@ -40,7 +40,12 @@ const correctAnswers = {
     'video2': '3',
     'video3': 'hotels',
     'video4': 'travel',
-    'video5': 'entertainment'
+    'video5': 'entertainment',
+
+    // Классификация (таблица)
+    'class_military': 'Military catering',
+    'class_commercial': 'Hotels,Restaurants,Pubs,Fast food outlets,Airports,Railway stations,Wedding receptions',
+    'class_noncommercial': 'Schools,Hospitals,Prisons,Factory canteens'
 };
 
 // Инициализация всех заданий при загрузке страницы
@@ -336,6 +341,88 @@ function checkVideoAnswer(questionNum, value) {
     saveTaskAnswer(answerId, value);
 }
 
+// Проверка таблицы классификации
+function checkClassificationTable() {
+    // Правильные наборы слов для каждой категории
+    const correctSets = {
+        military: ['military catering'],
+        commercial: ['hotels', 'restaurants', 'pubs', 'fast food outlets', 'airports', 'railway stations', 'wedding receptions'],
+        noncommercial: ['schools', 'hospitals', 'prisons', 'factory canteens']
+    };
+    
+    let feedback = '';
+    let allCorrect = true;
+    
+    // Проверяем каждую категорию
+    for (let category of ['military', 'commercial', 'noncommercial']) {
+        const inputs = document.querySelectorAll(`.task-input[data-category="${category}"]`);
+        const userWords = [];
+        
+        // Собираем все введённые слова (не пустые)
+        inputs.forEach(input => {
+            const val = input.value.trim().toLowerCase();
+            if (val !== '') {
+                userWords.push(val);
+            }
+        });
+        
+        const correctWords = correctSets[category];
+        const correctWordsLower = correctWords.map(w => w.toLowerCase());
+        
+        // Проверяем, все ли правильные слова введены
+        const missingWords = correctWordsLower.filter(w => !userWords.includes(w));
+        // Проверяем, есть ли лишние слова
+        const extraWords = userWords.filter(w => !correctWordsLower.includes(w));
+        
+        if (missingWords.length > 0 || extraWords.length > 0) {
+            allCorrect = false;
+            let categoryName = '';
+            if (category === 'military') categoryName = 'Military catering';
+            else if (category === 'commercial') categoryName = 'Commercial catering';
+            else categoryName = 'Non-commercial catering';
+            
+            feedback += `<p><strong>${categoryName}:</strong>`;
+            if (missingWords.length > 0) {
+                feedback += ` Не хватает: ${missingWords.join(', ')}. `;
+            }
+            if (extraWords.length > 0) {
+                feedback += ` Лишние: ${extraWords.join(', ')}. `;
+            }
+            feedback += `</p>`;
+        }
+    }
+    
+    const resultDiv = document.getElementById('classification-table-result');
+    if (allCorrect) {
+        resultDiv.innerHTML = '✅ Всё правильно! Все термины распределены верно.';
+        resultDiv.className = 'task-result success';
+    } else {
+        resultDiv.innerHTML = '❌ Есть ошибки:<br>' + feedback;
+        resultDiv.className = 'task-result partial';
+    }
+    
+    // Сохраняем все поля в SessionStorage
+    document.querySelectorAll('.class-input').forEach(input => {
+        const category = input.dataset.category;
+        const row = input.dataset.row;
+        saveTaskAnswer(`class_${category}_${row}`, input.value);
+    });
+}
+
+// Сброс таблицы классификации
+function resetClassificationTable() {
+    document.querySelectorAll('.class-input').forEach(input => {
+        input.value = '';
+        const category = input.dataset.category;
+        const row = input.dataset.row;
+        deleteCookie(`class_${category}_${row}`);
+    });
+    const resultDiv = document.getElementById('classification-table-result');
+    if (resultDiv) {
+        resultDiv.innerHTML = '';
+    }
+}
+
 // Загрузка сохраненных ответов
 function loadSavedAnswers() {
     console.log('Загрузка сохраненных ответов...');
@@ -458,6 +545,16 @@ function loadSavedAnswers() {
             }
         }
     }
+
+    // Загружаем ответы для таблицы классификации
+    document.querySelectorAll('.class-input').forEach(input => {
+        const category = input.dataset.category;
+        const row = input.dataset.row;
+        const saved = getCookie(`class_${category}_${row}`);
+        if (saved) {
+            input.value = saved;
+        }
+    });
     
     console.log('Загрузка завершена');
 }

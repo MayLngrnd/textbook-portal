@@ -655,6 +655,7 @@ body {
     font-family: inherit;
     font-size: 14px;
     transition: all 0.2s;
+    margin: 5px;
 }
 
 .page-view-single input[type="text"]:focus {
