@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (bookParam && textbookData[bookParam]) {
         currentBook = bookParam;
-        totalPages = textbookData[currentBook].totalPages || 24;
+        totalPages = textbookData[currentBook].totalPages || 12;
     }
     
     // Определяем, какую страницу загружать

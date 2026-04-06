@@ -52,12 +52,35 @@ const correctAnswers = {
 function initTasks() {
     console.log('Инициализация заданий...');
     loadSavedAnswers();
+}-
+
+// Экранирование (защита от XSS-атак)
+function escapeHtml(str) {
+    if (!str) return '';
+    return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+// Деэкранирование
+function decodeHtml(str) {
+    if (!str) return '';
+    return str
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&quot;/g, '"')
+        .replace(/&#39;/g, "'")
+        .replace(/&amp;/g, '&');
 }
 
 // Проверка поля ввода в таблице
 function checkTableInput(input) {
     if (!input) return;
     
+    const safeValue = escapeHtml(input.value);
     const taskId = input.dataset.task;
     const row = input.dataset.row;
     const col = input.dataset.col;
@@ -82,7 +105,7 @@ function checkTableInput(input) {
     }
     
     // Сохраняем ответ
-    saveTaskAnswer(answerId, input.value);
+    saveTaskAnswer(answerId, safeValue);
 }
 
 // Функция для проверки всей таблицы по кнопке
@@ -95,6 +118,7 @@ function checkTask(taskId) {
         let totalCount = 0;
         
         inputs.forEach(input => {
+            const safeValue = escapeHtml(input.value);
             const row = input.dataset.row;
             const col = input.dataset.col;
             const answerId = `${taskId}_${row}_${col}`;
@@ -112,7 +136,7 @@ function checkTask(taskId) {
                     input.classList.add('incorrect');
                 }
                 // Сохраняем каждый ответ
-                saveTaskAnswer(answerId, input.value);
+                saveTaskAnswer(answerId, safeValue);
             }
         });
         
@@ -156,6 +180,7 @@ function resetTask(taskId) {
 
 // Проверка True/False
 function checkTF(questionNum, value) {
+    const safeValue = escapeHtml(value);
     const answerId = `tf${questionNum}`;
     const resultSpan = document.getElementById(`tf${questionNum}-result`);
     const correctAnswer = correctAnswers[answerId];
@@ -172,11 +197,12 @@ function checkTF(questionNum, value) {
         }
     }
     
-    saveTaskAnswer(answerId, value);
+    saveTaskAnswer(answerId, safeValue);
 }
 
 // Проверка Matching
 function checkMatching(imageNum, value) {
+    const safeValue = escapeHtml(value);
     const answerId = `match${imageNum}`;
     const resultSpan = document.getElementById(`match${imageNum}-result`);
     const correctAnswer = correctAnswers[answerId];
@@ -191,7 +217,7 @@ function checkMatching(imageNum, value) {
         }
     }
     
-    saveTaskAnswer(answerId, value);
+    saveTaskAnswer(answerId, safeValue);
 }
 
 function checkAllMatching() {
@@ -250,6 +276,7 @@ function resetAllMatching() {
 
 // Проверка Gap-fill
 function checkGap(gapNum, value) {
+    const safeValue = escapeHtml(value);
     const answerId = `gap${gapNum}`;
     const resultSpan = document.getElementById(`gap${gapNum}-result`);
     const correctAnswer = correctAnswers[answerId];
@@ -264,7 +291,7 @@ function checkGap(gapNum, value) {
         }
     }
     
-    saveTaskAnswer(answerId, value);
+    saveTaskAnswer(answerId, safeValue);
 }
 
 // Проверка всех пропусков
@@ -324,6 +351,7 @@ function resetGaps() {
 
 // Проверка видео-вопросов
 function checkVideoAnswer(questionNum, value) {
+    const safeValue = escapeHtml(value);
     const answerId = `video${questionNum}`;
     const resultDiv = document.getElementById(`video-q${questionNum}-result`);
     const correctAnswer = correctAnswers[answerId];
@@ -338,7 +366,7 @@ function checkVideoAnswer(questionNum, value) {
         }
     }
     
-    saveTaskAnswer(answerId, value);
+    saveTaskAnswer(answerId, safeValue);
 }
 
 // Проверка таблицы классификации
@@ -355,7 +383,7 @@ function checkClassificationTable() {
     
     // Проверяем каждую категорию
     for (let category of ['military', 'commercial', 'noncommercial']) {
-        const inputs = document.querySelectorAll(`.task-input[data-category="${category}"]`);
+        const inputs = document.querySelectorAll(`.class-input[data-category="${category}"]`);
         const userWords = [];
         
         // Собираем все введённые слова (не пустые)
@@ -403,9 +431,10 @@ function checkClassificationTable() {
     
     // Сохраняем все поля в SessionStorage
     document.querySelectorAll('.class-input').forEach(input => {
+        const safeValue = escapeHtml(input.value);
         const category = input.dataset.category;
         const row = input.dataset.row;
-        saveTaskAnswer(`class_${category}_${row}`, input.value);
+        saveTaskAnswer(`class_${category}_${row}`, safeValue);
     });
 }
 
@@ -437,7 +466,8 @@ function loadSavedAnswers() {
         
         if (savedValue) {
             console.log('📎 Загружен ответ:', answerId, '=', savedValue);
-            input.value = savedValue; // ВАЖНО: устанавливаем значение
+            const originalValue = decodeHtml(savedValue);
+            input.value = originalValue; // устанавливаем значение
             
             // Проверяем правильность (чтобы подсветить)
             const correctAnswer = correctAnswers[answerId];
@@ -552,7 +582,8 @@ function loadSavedAnswers() {
         const row = input.dataset.row;
         const saved = getCookie(`class_${category}_${row}`);
         if (saved) {
-            input.value = saved;
+            const originalValue = decodeHtml(saved);
+            input.value = originalValue;
         }
     });
     
