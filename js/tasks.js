@@ -52,7 +52,7 @@ const correctAnswers = {
 function initTasks() {
     console.log('Инициализация заданий...');
     loadSavedAnswers();
-}-
+}
 
 // Экранирование (защита от XSS-атак)
 function escapeHtml(str) {

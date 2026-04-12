@@ -39,10 +39,10 @@ const textbookData = {
                 `
             },
             
-            // ===== СТРАНИЦА 2 - ВЫХОДНЫЕ ДАННЫЕ =====
+            // ===== СТРАНИЦА 2 - АННОТАЦИЯ =====
             2: {
                 type: 'copyright',
-                title: 'Выходные данные',
+                title: 'Аннотация',
                 content: `
                     <div class="copyright-page">
                         <p class="udk">УДК 811.642(07)</p>
@@ -413,7 +413,7 @@ const textbookData = {
                                 <!-- A. fast food outlet -->
                                 <div class="matching-item">
                                     <div class="matching-image"></div>
-                                    <img src="img/str12img1.png" width="300"/><br/>
+                                    <img src="img/str12img1.png" width="300" loading="lazy"/><br/>
                                     <select class="matching-select" data-image="1" onchange="checkMatching(1, this.value)">
                                         <option value="">-- Выберите --</option>
                                         <option value="fast food outlet">A. fast food outlet</option>
@@ -427,7 +427,7 @@ const textbookData = {
                                 
                                  <!-- B. self-service -->
                                 <div class="matching-item">
-                                    <img src="img/str12img2.png" width="300"/><br/>
+                                    <img src="img/str12img2.png" width="300" loading="lazy"/><br/>
                                     <select class="matching-select" data-image="2" onchange="checkMatching(2, this.value)">
                                         <option value="">-- Выберите --</option>
                                         <option value="fast food outlet">A. fast food outlet</option>
@@ -441,7 +441,7 @@ const textbookData = {
 
                                 <!-- C. buffet car -->
                                 <div class="matching-item">
-                                    <img src="img/str12img3.png" width="300"/><br/>
+                                    <img src="img/str12img3.png" width="300" loading="lazy"/><br/>
                                     <select class="matching-select" data-image="3" onchange="checkMatching(3, this.value)">
                                         <option value="">-- Выберите --</option>
                                         <option value="fast food outlet">A. fast food outlet</option>
@@ -455,7 +455,7 @@ const textbookData = {
 
                                 <!-- D. office block canteens -->
                                 <div class="matching-item">
-                                    <img src="img/str12img4.png" width="300"/><br/>
+                                    <img src="img/str12img4.png" width="300" loading="lazy"/><br/>
                                     <select class="matching-select" data-image="4" onchange="checkMatching(4, this.value)">
                                         <option value="">-- Выберите --</option>
                                         <option value="fast food outlet">A. fast food outlet</option>
@@ -469,7 +469,7 @@ const textbookData = {
 
                                 <!-- E. pubs -->
                                 <div class="matching-item">
-                                    <img src="img/str12img5.png" width="300"/><br/>
+                                    <img src="img/str12img5.png" width="300" loading="lazy"/><br/>
                                     <select class="matching-select" data-image="5" onchange="checkMatching(5, this.value)">
                                         <option value="">-- Выберите --</option>
                                         <option value="fast food outlet">A. fast food outlet</option>
